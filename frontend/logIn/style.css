@@ -1,0 +1,127 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Geologica:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #2d3250; 
+  --bg2: #424769;
+  --text-accent: #fff;
+  --text: #676f9d;
+  --accent: #f9b17a;
+  --error: #f56a6a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-accent);
+  font-family: 'Geologica';
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  padding-bottom: 60px;
+}
+
+header a {
+  display: block;
+  text-decoration: none;
+  padding: 5px 10px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+header .active {
+  border-bottom: 2px solid var(--accent);
+  margin-right: 20px;
+  color: var(--text-accent);
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 14px;
+  padding: 10px 0 30px 0;
+  font-weight: 300;
+}
+
+label {
+  background: var(--bg2);
+  display: block;
+  padding: 15px;
+  border-left: 3px solid var(--bg2);
+  transition: border-color .3s ease;
+  margin-bottom: 7px;
+}
+
+label.invalid:focus-within {
+  border-left: 3px solid var(--error);
+}
+
+label div {
+  color: var(--text);
+  font-size: 14px;
+  padding-bottom: 7px;
+}
+
+label div.error {
+  color: var(--error);
+}
+
+
+input {
+  background: var(--bg2);
+  color: var(--text-accent);
+  font-family: 'Geologica';
+  font-size: 15px;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+}
+
+input::placeholder {
+  color: var(--text);
+  font-family: 'Geologica';
+  font-size: 14px;
+}
+
+label:focus-within {
+  border-left: 3px solid var(--accent);
+}
+
+button {
+  position: relative;
+  display: block;
+  background: var(--accent);
+  border: none;
+  color: var(--bg);
+  font-family: 'Geologica';
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px;
+  width: 100%;
+  margin-top: 30px;
+  transition: transform .3s ease;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s;
+}

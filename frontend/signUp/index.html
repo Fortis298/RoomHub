@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="/static/common/normalization.css">
+  <link rel="stylesheet" href="/static/signUp/style.css">
+</head>
+<body>
+  
+    <header>
+    <a href="/logIn">Вход</a>
+    <a class="active" href="/signUp">Регистрация</a>
+  </header>
+  
+  <form novalidate>
+    <h1>Будем знакомы!</h1>
+    <h2>Зарегистрируйтесь, чтобы начать пользоваться</h2>
+    
+    <label class="nick">
+      <div>Имя</div>
+      <input 
+        type="text" 
+        required 
+        minlength="3" 
+        maxlength="64" 
+        pattern="^[A-Za-z0-9_]+$"
+        placeholder="Как к вам обращаться?">
+    </label>
+    
+    <label class="password">
+      <div>Пароль</div>
+      <input 
+        required
+        type="text" 
+        placeholder="Это ваш секрет"
+        minlength="8"
+        maxlength="64">
+    </label>
+    
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
+  <script src="/static/signUp/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Geologica:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #2d3250; 
+  --bg2: #424769;
+  --text-accent: #fff;
+  --text: #676f9d;
+  --accent: #f9b17a;
+  --danger: #f56a6a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-accent);
+  font-family: 'Geologica';
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  padding: 15px 30px 60px 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  gap: 40px;
+}
+
+nav::-webkit-scrollbar {
+  display: none; 
+}
+
+nav button {
+  display: block;
+  font-family: 'Geologica';
+  background: var(--bg);
+  padding: 5px 10px;
+  color: var(--text);
+  font-size: 13px;
+  white-space: nowrap;
+  border: none;
+  border-bottom: 2px solid var(--bg);
+  transition: border-color .2s ease, color .2s ease;
+  scroll-snap-align: center;
+}
+
+nav .active {
+  border-bottom: 2px solid var(--accent);
+  color: var(--text-accent);
+}
+
+section[data-type^="section-"] {
+  display: none;
+}
+
+section.active {
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg2);
+  padding: 15px;
+  margin-bottom: 7px;
+}
+
+.row .title {
+  color: var(--text);
+  font-size: 14px;
+  padding-bottom: 7px;
+}
+
+.row .data {
+  background: var(--bg2);
+  color: var(--text-accent);
+  font-family: 'Geologica';
+  font-size: 15px;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+}
+
+.account-actions {
+  display: flex;
+  gap: 16px;
+}
+
+section[data-type^="section-"] button {
+  display: block;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  color: var(--bg);
+  font-family: 'Geologica';
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px;
+  transition: transform .3s ease;
+}
+
+.account-actions .del-account {
+  background: transparent !important;
+  border-color: var(--danger) !important;
+  color: var(--danger) !important;
+}
+
+section[data-type^="section-"] button:active {
+  transform: scale(0.9);
+}
+
+.modal-del-account {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-del-account.active {
+  display: flex;
+}
+
+.modal-window {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  padding: 20px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.modal-actions button {
+  position: relative;
+  display: block;
+  background: var(--bg);
+  border: 2px solid var(--text);
+  color: var(--text);
+  font-family: 'Geologica';
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px;
+  transition: transform .3s ease;
+}
+
+.modal-actions button:active {
+  transform: scale(0.9);
+}
+
+.modal-actions .del-account {
+  background: var(--danger) !important;
+  border-color: var(--danger) !important;
+  color: var(--bg) !important;
+}

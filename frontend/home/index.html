@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Главная</title>
+  <link rel="stylesheet" href="/static/common/normalization.css">
+  <link rel="stylesheet" href="/static/home/style.css?v=6">
+</head>
+<body>
+  
+  <nav>
+    <button class="active" data-type="account">Аккаунт</button>
+    <button data-type="enter-room">Войти в комнату</button>
+    <button data-type="create-room">Создать комнату</button>
+    <button data-type="settings">Настройки</button>
+  </nav>
+  
+  <section class="active account" data-type="section-account">
+    <h2>Аккаунт</h2>
+    
+    <div class="row">
+      <div class="title">Имя</div>
+      <div class="data nick">...</div>
+    </div>
+    
+    <div class="row">
+      <div class="title">id</div>
+      <div class="data id">...</div>
+    </div>
+    
+    <div class="row">
+      <div class="title">Дата создания UTC</div>
+      <div class="data created-at">...</div>
+    </div>
+    
+    <div class="account-actions">
+      <button class="exit">Выйти</button>
+      <button class="del-account">Удалить</button>
+    </div>
+  </section>
+  
+  <section data-type="section-create-room">
+    <h2>Скоро</h2>
+  </section>
+  
+  <section data-type="section-enter-room">
+    <h2>Скоро</h2>
+  </section>
+  
+  <section data-type="section-settings">
+    <h2>Скоро</h2>
+  </section>
+  
+  <section class="modal-del-account">
+    <div class="modal-window">
+      <p>Вы точно хотите удалить аккаунт?</p>
+    
+      <div class="modal-actions">
+        <button class="modal-button cancel">Отмена</button>
+        <button class="modal-button del-account">Удалить</button>
+      </div>
+    </div>
+  </section>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
+  <script src="/static/home/main.js?v=<?= time() ?>"></script>
+</body>
+</html>
