@@ -44,5 +44,4 @@ async def created_session(request, nick, token):
 async def del_expired_sessions(app):
   async with app['pool'].acquire() as conn:
     await conn.execute("DELETE FROM sessions WHERE expires_at < $1", datetime.now(timezone.utc))
-    logger.info('Просроченные сессии были удалены')
     

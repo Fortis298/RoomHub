@@ -48,7 +48,8 @@ app.on_cleanup.append(cleanup)
 app.router.add_static("/static/common", path=BASE_DIR / "common")
 app.router.add_static("/static/signUp", path=BASE_DIR / "signUp")
 app.router.add_static("/static/logIn", path=BASE_DIR / "logIn")
-app.router.add_static("/static/home", path=BASE_DIR / "home") 
+app.router.add_static("/static/home", path=BASE_DIR / "home")
+app.router.add_static("/static/home/js", path=BASE_DIR / "home" / "js") 
 
 app.router.add_post("/api/signUp", signUp.handler)
 app.router.add_post("/api/logIn", logIn.handler)
@@ -59,5 +60,7 @@ app.router.add_post("/api/delAccount", delAccount.handler)
 app.router.add_get("/signUp", signUpPage.handler)
 app.router.add_get("/logIn", logInPage.handler)
 app.router.add_get("/home", homePage.handler)
+
+app.router.add_get("/ping", lambda r: web.Response(text="ok"))
 
 web.run_app(app, host="127.0.0.1", port=8000)
