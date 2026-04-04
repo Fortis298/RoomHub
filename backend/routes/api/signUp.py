@@ -1,13 +1,9 @@
 # backend/routers/api/signUp.py
-from datetime import datetime, timezone
 from aiohttp import web
 import asyncpg
-import pathlib
 import secrets
-import logging
 
 from utils import check_valid, hash_password, created_session
-logger = logging.getLogger(__name__)
 
 async def handler(request):
   data = await request.json()

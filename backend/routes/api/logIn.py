@@ -1,7 +1,6 @@
 # backend/routers/api/signUp.py
 from aiohttp import web
 import asyncpg
-import pathlib
 import secrets
 
 from utils import check_valid, check_password, created_session

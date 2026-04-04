@@ -1,9 +1,6 @@
 # backend/routers/api/checkSession.py
-from datetime import datetime
 from aiohttp import web
 import asyncpg
-import pathlib
-
 
 async def handler(request):
   token = request.cookies.get('token')

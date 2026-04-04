@@ -6,7 +6,14 @@ import asyncio
 import logging
 import os
 
-from routes.api import signUp, logIn, checkSession, exitAccount, delAccount
+from routes.api import (
+  signUp, 
+  logIn, 
+  checkSession, 
+  exitAccount, 
+  delAccount, 
+  creationRoom
+)
 from routes.pages import signUpPage, logInPage, homePage
 
 from utils import del_expired_sessions
@@ -56,6 +63,7 @@ app.router.add_post("/api/logIn", logIn.handler)
 app.router.add_post("/api/checkSession", checkSession.handler)
 app.router.add_post("/api/exitAccount", exitAccount.handler)
 app.router.add_post("/api/delAccount", delAccount.handler)
+app.router.add_post("/api/creationRoom", creationRoom.handler)
 
 app.router.add_get("/signUp", signUpPage.handler)
 app.router.add_get("/logIn", logInPage.handler)
@@ -63,5 +71,5 @@ app.router.add_get("/home", homePage.handler)
 
 app.router.add_get("/ping", lambda r: web.Response(text="ok"))
 
-#web.run_app(app, host="127.0.0.1", port=8000)
-web.run_app(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
+web.run_app(app, host="127.0.0.1", port=8000)
+#web.run_app(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))

@@ -9,6 +9,7 @@
   --danger: #f56a6a;
 }
 
+/* <= ОБЩИЕ СТИЛИ => */
 body {
   background: var(--bg);
   color: var(--text-accent);
@@ -17,14 +18,98 @@ body {
   flex-direction: column;
 }
 
+section[data-type^="section-"] button {
+  display: block;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  color: var(--bg);
+  font-family: 'Geologica';
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px;
+  transition: transform .3s ease;
+}
+
+section[data-type^="section-"] button:active {
+  transform: scale(0.9);
+}
+
+section[data-type^="section-"] {
+  display: none;
+}
+
+section.active {
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+section[data-type^="section-"] .row {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg2);
+  padding: 15px;
+  margin-bottom: 7px;
+  border-left: 3px solid var(--bg2);
+}
+
+section[data-type^="section-"] .row .title {
+  color: var(--text);
+  font-size: 14px;
+  padding-bottom: 7px;
+}
+
+section[data-type^="section-"] .row .data {
+  background: var(--bg2);
+  color: var(--text-accent);
+  font-family: 'Geologica';
+  font-size: 15px;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+}
+
+section[data-type^="section-"] .row input {
+  background: var(--bg2);
+  color: var(--text-accent);
+  font-family: 'Geologica';
+  font-size: 15px;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+}
+
+section[data-type^="section-"] .row input::placeholder {
+  color: var(--text);
+  font-family: 'Geologica';
+  font-size: 14px;
+}
+/* </= ОБЩИЕ СТИЛИ => */
+
+/* <= НАВИГАЦИЯ => */
 nav {
   display: flex;
   padding: 15px 30px 60px 30px;
   overflow-x: auto;
   overflow-y: hidden;
   -ms-overflow-style: none;
-  scroll-snap-type: x mandatory;
+  
   gap: 40px;
+  margin: 0 auto;
+  width: min-content;
+  max-width: 100%; 
 }
 
 nav::-webkit-scrollbar {
@@ -49,76 +134,23 @@ nav .active {
   border-bottom: 2px solid var(--accent);
   color: var(--text-accent);
 }
+/* </= НАВИГАЦИЯ => */
 
-section[data-type^="section-"] {
-  display: none;
-}
-
-section.active {
-  padding: 15px 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-h2 {
-  font-size: 30px;
-  font-weight: 500;
-  padding-bottom: 10px;
-}
-
-.row {
-  display: flex;
-  flex-direction: column;
-  background: var(--bg2);
-  padding: 15px;
-  margin-bottom: 7px;
-}
-
-.row .title {
-  color: var(--text);
-  font-size: 14px;
-  padding-bottom: 7px;
-}
-
-.row .data {
-  background: var(--bg2);
-  color: var(--text-accent);
-  font-family: 'Geologica';
-  font-size: 15px;
-  outline: none;
-  border: none;
-  width: 100%;
-  padding: 0;
-}
-
-.account-actions {
+/* <= КНОПКИ ВХОД И УДАЛЕНТЕ => */
+.account .account-actions {
   display: flex;
   gap: 16px;
 }
 
-section[data-type^="section-"] button {
-  display: block;
-  background: var(--accent);
-  border: 2px solid var(--accent);
-  color: var(--bg);
-  font-family: 'Geologica';
-  font-size: 16px;
-  font-weight: 500;
-  padding: 10px;
-  transition: transform .3s ease;
-}
-
-.account-actions .del-account {
+.account .account-actions .del-account {
   background: transparent !important;
   border-color: var(--danger) !important;
   color: var(--danger) !important;
 }
+/* </= КНОПКИ ВХОД И УДАЛЕНТЕ => */
 
-section[data-type^="section-"] button:active {
-  transform: scale(0.9);
-}
-
-.modal-del-account {
+/* <= МОДАЛЬНОЕ ОКНО => */
+.modal-window {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -129,11 +161,13 @@ section[data-type^="section-"] button:active {
   background: rgba(0,0,0,0.5);
 }
 
-.modal-del-account.active {
+.modal-window.active {
   display: flex;
 }
+/* </= МОДАЛЬНОЕ ОКНО => */
 
-.modal-window {
+/* <= МОДАЛЬНОЕ ОКНО ДЛЯ УДАЛЕНИЯ АККАУНТА => */
+.modal-del-account {
   display: flex;
   flex-direction: column;
   background: var(--bg);
@@ -168,4 +202,47 @@ section[data-type^="section-"] button:active {
   background: var(--danger) !important;
   border-color: var(--danger) !important;
   color: var(--bg) !important;
+}
+/* <= МОДАЛЬНОЕ ОКНО ДЛЯ УДАЛЕНИЯ АККАУНТА => */
+
+/* <= СОЗДАНИЕ КОМНАТЫ => */
+.create-room-form .create {
+  position: relative;
+  display: block;
+  background: var(--accent);
+  border: none;
+  color: var(--bg);
+  font-family: 'Geologica';
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px;
+  width: 100%;
+  transition: transform .3s ease;
+}
+
+.create-room-form label.row {
+  transition: border-color .3s ease;
+}
+
+.create-room-form label.row:focus-within {
+  border-left: 3px solid var(--accent);
+}
+
+.create-room-form label.invalid:focus-within {
+  border-left: 3px solid var(--danger);
+}
+/* </= СОЗДАНИЕ КОМНАТЫ => */
+
+/* <= АНИМАЦИИ => */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s;
 }

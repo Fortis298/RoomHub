@@ -1,7 +1,6 @@
 # backend/routers/api/delAccount.py
 from aiohttp import web
 import asyncpg
-import pathlib
 
 async def handler(request):
   token = request.cookies.get('token')
