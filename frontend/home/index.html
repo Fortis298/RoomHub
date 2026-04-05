@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Главная</title>
-  <link rel="stylesheet" href="/static/common/normalization.css?v=1">
-  <link rel="stylesheet" href="/static/home/style.css?v=1">
+  <link rel="stylesheet" href="/static/common/normalization.css?v=4">
+  <link rel="stylesheet" href="/static/home/style.css?v=4">
 </head>
 <body>
   
@@ -58,8 +58,20 @@
           minlength="3" 
           maxlength="64" 
           pattern="^[A-Za-z0-9_]+$"
-          placeholder="Как назовёте?"/>
+          placeholder="Моя крутая комната"/>
       </label>
+      
+      <div class="type-room">
+        <label>
+          <div>Публичная</div>
+          <input type="radio" name="type-room" value="public" checked/>
+        </label>
+        
+        <label>
+          <div>Приватная</div>
+          <input type="radio" name="type-room" value="private" />
+        </label>
+      </div>
     
       <button type="submit" class="create">Создать</button>
     </form>
@@ -73,9 +85,8 @@
   <section class="modal-window">
   </section>
   
-  
-  <!--<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-  <script>eruda.init();</script>-->
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
 
   <script src="/static/home/js/nav.js"></script>
   <script src="/static/home/js/fetchDataUser.js"></script>

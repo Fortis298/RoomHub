@@ -1,6 +1,5 @@
 const name = document.querySelector('.create-room-form .name input')
 const outputErrorName = document.querySelector('.create-room-form .name .title')
-
 const form = document.querySelector('.create-room-form')
 
 name.addEventListener('input', () => {
@@ -11,14 +10,24 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
   
   if (form.checkValidity()) {
+    const typeRoom = document.querySelector('input[name="type-room"]:checked')
+    
     fetch('/api/creationRoom', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({'name': name.value.trim()})
+      credentials: 'include',
+      body: JSON.stringify({'name': name.value.trim(), 'typeroom': typeRoom.value.trim()})
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      if (data.ok) {
+        alert('Скоро...')
+      }
+      else {
+        if (data.errors.name) {
+          !checkValid(name, outputErrorName, 3, 'Название', data.errors.name.cause) ? invalidAnimation(name) : null
+        }
+      }
     })
   }
   else {

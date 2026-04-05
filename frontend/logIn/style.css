@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Geologica:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg: #2d3250; 
-  --bg2: #424769;
+  --bg: #101010; 
+  --bg2: #1d1d1d;
   --text-accent: #fff;
-  --text: #676f9d;
-  --accent: #f9b17a;
-  --error: #f56a6a;
+  --text: #8A8A8A;
+  --accent: #494C9B;
+  --error: #CB5656;
 }
 
 body {
@@ -36,6 +36,7 @@ header .active {
   border-bottom: 2px solid var(--accent);
   margin-right: 20px;
   color: var(--text-accent);
+  border-radius: 0px;
 }
 
 h1 {
