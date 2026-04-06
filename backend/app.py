@@ -57,6 +57,7 @@ app.router.add_static("/static/signUp", path=BASE_DIR / "signUp")
 app.router.add_static("/static/logIn", path=BASE_DIR / "logIn")
 app.router.add_static("/static/home", path=BASE_DIR / "home")
 app.router.add_static("/static/home/js", path=BASE_DIR / "home" / "js") 
+app.router.add_static("/static/home/img", path=BASE_DIR / "home" / "img") 
 
 app.router.add_post("/api/signUp", signUp.handler)
 app.router.add_post("/api/logIn", logIn.handler)

@@ -6,7 +6,7 @@
   --br: #2d2d2d;
   --text-accent: #fff;
   --text: #8A8A8A;
-  --accent: #494C9B;
+  --accent: #A88953;
   --danger: #CB5656;
 }
 
@@ -17,6 +17,10 @@ body {
   font-family: 'Geologica';
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  padding: 30px 0 0 30px;
 }
 
 section[data-type^="section-"] button {
@@ -40,7 +44,7 @@ section[data-type^="section-"] {
 }
 
 section.active {
-  padding: 15px 30px;
+  padding: 15px 15px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -102,18 +106,27 @@ section[data-type^="section-"] .row input::placeholder {
 /* <= НАВИГАЦИЯ => */
 nav {
   display: flex;
-  padding: 15px 30px 60px 30px;
+  padding: 15px 15px 60px 15px;
+}
+
+nav img {
+  padding-right: 15px;
+  height: 30px;
+}
+
+nav div{
+  display: flex;
   overflow-x: auto;
   overflow-y: hidden;
   -ms-overflow-style: none;
-  
   gap: 40px;
   margin: 0 auto;
   width: min-content;
   max-width: 100%; 
+  border-radius: 0;
 }
 
-nav::-webkit-scrollbar {
+nav div::-webkit-scrollbar {
   display: none; 
 }
 
@@ -284,6 +297,7 @@ nav .active {
 .type-room label {
   display: flex;
   flex: 1;
+  font-size: 14px;
   background: var(--bg2);
   border: 1px solid var(--bg2);
   color: var(--text);
