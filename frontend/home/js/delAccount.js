@@ -3,10 +3,10 @@ const openDeleteModalBtn = document.querySelector('.account-actions .del-account
 
 openDeleteModalBtn.addEventListener('click', () => {
   html = `
-    <div class="modal-del-account">
+    <div class="modal">
       <p>Вы точно хотите удалить аккаунт?</p>
     
-      <div class="modal-actions">
+      <div class="modal-actions del">
         <button class="modal-button cancel">Отмена</button>
         <button class="modal-button del-account">Удалить</button>
       </div>

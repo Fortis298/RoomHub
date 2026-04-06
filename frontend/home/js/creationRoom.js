@@ -3,7 +3,7 @@ const outputErrorName = document.querySelector('.create-room-form .name .title')
 const form = document.querySelector('.create-room-form')
 
 name.addEventListener('input', () => {
-  checkValid(name, outputErrorName, 3, 'Имя')
+  checkValid(name, outputErrorName, 3, 'Название')
 })
 
 form.addEventListener('submit', (e) => {
@@ -21,7 +21,56 @@ form.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
       if (data.ok) {
-        alert('Скоро...')
+        if (data.typeroom == 'public') {
+          const html = `
+            <div class="modal">
+              <p>Комната «${name.value.trim()}» создана</p>
+              <div class="modal-actions room-public">
+                <button class="modal-button close">Закрыть</button>
+              </div>
+            </div>`
+          modalWindow.innerHTML = html
+          modalWindow.classList.add('active')
+          
+          modalWindow.addEventListener('click', (e) => {
+            if (e.target.classList.contains('close')) {
+              modalWindow.classList.remove('active')
+            }
+          })
+        }
+        else {
+          const html = `
+            <div class="modal">
+              <p>Комната «${name.value.trim()}» создана</p>
+              <span>Сохраните ключ для входа, он будет показан только 1 раз</span>
+              
+              <div class="invite-code">${data.invitecode}</div>
+    
+              <div class="modal-actions room-private">
+                <button class="modal-button close">Закрыть</button>
+                <button class="modal-button copy">Скопировать</button>
+              </div>
+            </div>`
+          modalWindow.innerHTML = html
+          modalWindow.classList.add('active')
+          
+          modalWindow.addEventListener('click', (e) => {
+            if (e.target.classList.contains('close')) {
+              modalWindow.classList.remove('active')
+            }
+            if (e.target.classList.contains('copy')) {
+              const textToCopy = data.invitecode
+              
+              navigator.clipboard.writeText(textToCopy)
+              .then(() => {
+                e.target.textContent = 'Скопировано'
+              })
+              .catch(err => {
+                e.target.textContent = 'Ошибка'
+              })
+            }
+          })
+        }
       }
       else {
         if (data.errors.name) {
