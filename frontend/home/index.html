@@ -7,53 +7,72 @@
   <title>RoomHub</title>
   <link rel="icon" href="/static/home/img/favicon.ico">
   <link rel="stylesheet" href="/static/common/normalization.css?v=4">
-  <link rel="stylesheet" href="/static/home/style.css?v=4">
+  <link rel="stylesheet" href="/static/home/style.css?v=11">
 </head>
 <body>
   
   <nav>
     <img src="/static/home/img/logo.png"/>
     <div>
-      <button class="active" data-type="account">Аккаунт</button>
-      <button data-type="enter-room">Войти в комнату</button>
-      <button data-type="create-room">Создать комнату</button>
-      <button data-type="settings">Настройки</button>
+      <button class="active" data-type="account">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="img">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+      </button>
+      <button data-type="enter-room">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="img">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+      </button>
+      <button data-type="create-room">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="img">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 1v4m-2-2h4" />
+        </svg>
+      </button>
+      <button data-type="settings">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="img">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+      </button>
     </div>
   </nav>
   
-  <section class="active account" data-type="section-account">
+    <section class="active account" data-type="section-account">
     <h2>Аккаунт</h2>
-    
+
     <div class="row">
       <div class="title">Имя</div>
       <div class="data nick">ㅤ</div>
     </div>
-    
+
     <div class="row">
       <div class="title">id</div>
       <div class="data id">ㅤ</div>
     </div>
-    
+
     <div class="row">
       <div class="title">Дата создания UTC</div>
       <div class="data created-at">ㅤ</div>
     </div>
-    
+
     <div class="account-actions">
       <button class="exit">Выйти</button>
       <button class="del-account">Удалить</button>
     </div>
   </section>
-  
+
   <section data-type="section-enter-room">
-    <h2>Скоро</h2>
+    <h2>Ваши комнаты</h2>
+    <section class="you-rooms"></section>
   </section>
-  
+
   <section data-type="section-create-room">
-    
+
     <form class="create-room-form" novalidate>
       <h2>Создать комнату</h2>
-    
+
       <label class="row name">
         <div class="title">Название</div>
         <input 
@@ -64,38 +83,38 @@
           pattern="^[A-Za-z0-9_]+$"
           placeholder="Моя крутая комната"/>
       </label>
-      
+
       <div class="type-room">
         <label>
           <div>Публичная</div>
           <input type="radio" name="type-room" value="public" checked/>
         </label>
-        
+
         <label>
           <div>Приватная</div>
           <input type="radio" name="type-room" value="private" />
         </label>
       </div>
-    
+
       <button type="submit" class="create">Создать</button>
     </form>
-    
+
   </section>
-  
+
   <section data-type="section-settings">
     <h2>Скоро</h2>
   </section>
-  
+
   <section class="modal-window">
   </section>
   
-  <!--<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-  <script>eruda.init();</script>-->
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
 
-  <script src="/static/home/js/nav.js?v=4"></script>
-  <script src="/static/home/js/fetchDataUser.js?v=4"></script>
-  <script src="/static/home/js/exitAccount.js?v=4"></script>
-  <script src="/static/home/js/delAccount.js?v=4"></script>
-  <script src="/static/home/js/creationRoom.js?v=4"></script>
+  <script src="/static/home/js/nav.js?v=6"></script>
+  <script src="/static/home/js/fetchDataUser.js?v=9"></script>
+  <script src="/static/home/js/exitAccount.js?v=6"></script>
+  <script src="/static/home/js/delAccount.js?v=6"></script>
+  <script src="/static/home/js/creationRoom.js?v=6"></script>
 </body>
 </html>

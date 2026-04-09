@@ -76,5 +76,5 @@ app.router.add_get("/robots.txt", lambda request: web.FileResponse(BASE_DIR / "r
 app.router.add_get("/sitemap.xml", lambda request: web.FileResponse(BASE_DIR / "sitemap.xml"))
 app.router.add_get("/google6391eacc14581c7a.html", lambda request: web.FileResponse(BASE_DIR / "google6391eacc14581c7a.html"))
 
-#web.run_app(app, host="127.0.0.1", port=8000)
-web.run_app(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
+web.run_app(app, host="127.0.0.1", port=8000)
+#web.run_app(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))

@@ -12,10 +12,5 @@ navs.forEach((btn) => {
       section.classList.remove('active')
     })
     document.querySelector(`[data-type="section-${btn.dataset.type}"]`).classList.add('active')
-    
-    btn.scrollIntoView({
-      behavior: "smooth",
-      inline: "center"
-    })
   })
 })

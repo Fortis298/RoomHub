@@ -39,7 +39,7 @@ form.addEventListener('submit', (e) => {
           })
         }
         else {
-          const html = `
+          let html = `
             <div class="modal">
               <p>Комната «${name.value.trim()}» создана</p>
               <span>Сохраните ключ для входа, он будет показан только 1 раз</span>
