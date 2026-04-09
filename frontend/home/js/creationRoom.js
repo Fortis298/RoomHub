@@ -1,6 +1,9 @@
+ import { fetchDataUser } from './fetchDataUser.js'
+
 const name = document.querySelector('.create-room-form .name input')
 const outputErrorName = document.querySelector('.create-room-form .name .title')
 const form = document.querySelector('.create-room-form')
+const modalWindow = document.querySelector('.modal-window')
 
 name.addEventListener('input', () => {
   checkValid(name, outputErrorName, 3, 'Название')
@@ -21,6 +24,7 @@ form.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
       if (data.ok) {
+        fetchDataUser()
         if (data.typeroom == 'public') {
           const html = `
             <div class="modal">

@@ -2,7 +2,7 @@ const modalWindow = document.querySelector('.modal-window')
 const openDeleteModalBtn = document.querySelector('.account-actions .del-account')
 
 openDeleteModalBtn.addEventListener('click', () => {
-  html = `
+  const html = `
     <div class="modal">
       <p>Вы точно хотите удалить аккаунт?</p>
     
