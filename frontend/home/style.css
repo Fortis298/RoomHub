@@ -45,6 +45,7 @@ section[data-type^="section-"] button:active {
 
 section[data-type^="section-"] {
   display: none;
+  overflow-y: auto;
 }
 
 section.active {
@@ -198,15 +199,10 @@ nav button.active .img {
 /* </= МОДАЛЬНОЕ ОКНО => */
 
 /* <= МОДАЛЬНОЕ ОКНО СОЗДАНИЕ КОМНАТЫ=>*/
-.modal-actions.room-public {
+.modal-actions {
   display: flex;
   justify-content: flex-end;
-  padding-top: 20px;
-}
-
-.modal-actions.room-private {
-  display: flex;
-  justify-content: space-between;
+  gap: 16px;
   padding-top: 20px;
 }
 
@@ -234,12 +230,6 @@ nav button.active .img {
 /* </= МОДАЛЬНОЕ ОКНО СОЗДАНИЕ КОМНАТЫ=>*/
 
 /* <= МОДАЛЬНОЕ ОКНО ДЛЯ УДАЛЕНИЯ АККАУНТА => */
-.modal-actions.del {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-}
-
 .modal-actions button {
   position: relative;
   display: block;
@@ -257,7 +247,7 @@ nav button.active .img {
   transform: scale(0.9);
 }
 
-.modal-actions .del-account {
+.modal-actions .del-account,  .modal-actions .del-room{
   background: var(--danger) !important;
   border-color: var(--danger) !important;
   color: var(--bg) !important;
@@ -324,6 +314,9 @@ nav button.active .img {
 .you-rooms {
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  gap: 7px;
+  height: 100%;
 }
 
 .you-rooms .you-room {
@@ -332,7 +325,6 @@ nav button.active .img {
   align-items: center;
   background: var(--bg2);
   padding: 15px;
-  margin-bottom: 7px;
 }
 
 .you-room .name-room {
@@ -354,6 +346,9 @@ nav button.active .img {
 
 .you-rooms button .del-room {
   color: var(--danger);
+}
+.create-room-form {
+  padding-bottom: 23px;
 }
 /* </= СПИСОК КОМНАТ ПОЛЬЗОВАТЕЛЯ => */
 

@@ -1,5 +1,8 @@
 const navs = document.querySelectorAll('nav button')
 const sections = document.querySelectorAll('section[data-type^="section-"]')
+const rooms = document.querySelector('.you-rooms')
+
+document.body.style.height = `${window.innerHeight}px`
 
 navs.forEach((btn) => {
   btn.addEventListener('click', () => {

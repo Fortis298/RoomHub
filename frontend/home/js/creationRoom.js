@@ -1,4 +1,4 @@
- import { fetchDataUser } from './fetchDataUser.js'
+import { fetchDataUser } from './fetchDataUser.js'
 
 const name = document.querySelector('.create-room-form .name input')
 const outputErrorName = document.querySelector('.create-room-form .name .title')
@@ -24,6 +24,8 @@ form.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
       if (data.ok) {
+        name.value = ''
+        
         fetchDataUser()
         if (data.typeroom == 'public') {
           const html = `
