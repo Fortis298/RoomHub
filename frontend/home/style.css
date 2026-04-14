@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Geologica:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg: #101010; 
-  --bg2: #1d1d1d;
-  --br: #2d2d2d;
-  --text-accent: #fff;
-  --text: #8A8A8A;
-  --accent: #A88953;
-  --danger: #CB5656;
+  --bg: #ffffff;      
+  --bg2: #f5f5f5;      
+  --br: #e0e0e0;       
+  --text-accent: #000; 
+  --text: #6f6f6f;     
+  --accent: #6a5acd;   
+  --danger: #d9534f;
 }
 
 /* <= ОБЩИЕ СТИЛИ => */
@@ -25,6 +25,10 @@ svg {
 
 h1 {
   padding: 30px 0 0 30px;
+}
+
+input {
+  border-radius: 0;
 }
 
 section[data-type^="section-"] button {
@@ -48,7 +52,7 @@ section[data-type^="section-"] {
   overflow-y: auto;
 }
 
-section.active {
+section[data-type^="section-"].active {
   padding: 15px 15px;
   display: flex;
   flex-direction: column;
@@ -56,6 +60,7 @@ section.active {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  height: 100%;
 }
 
 h2 {
@@ -111,8 +116,11 @@ section[data-type^="section-"] .row input::placeholder {
 /* <= НАВИГАЦИЯ => */
 nav {
   display: flex;
-  padding: 15px 15px 60px 15px;
+  padding: 15px 15px 15px 15px;
   justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+  border-bottom: 1px solid var(--br);
 }
 
 nav img {
@@ -125,6 +133,13 @@ nav div{
   gap: 20px;
   max-width: 100%; 
   border-radius: 0;
+  vertical-align: middle;
+  line-height: 1;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  
 }
 
 nav div::-webkit-scrollbar {
@@ -133,12 +148,15 @@ nav div::-webkit-scrollbar {
 
 nav button {
   display: block;
-  font-family: 'Geologica';
+  vertical-align: middle;
+  line-height: 1;
+  font-family: sans-serif;
   background: var(--bg);
   color: var(--text);
   font-size: 13px;
   border: none;
   padding: 0;
+  margin: 0;
   transition: border-color .2s ease, color .2s ease;
 }
 
@@ -147,11 +165,11 @@ nav button .img {
 }
 
 nav button .img {
-  color: var(--text);
+  color: var(--br);
 }
 
 nav button.active .img {
-  color: var(--text-accent);
+  color: var(--accent);
 }
 /* </= НАВИГАЦИЯ => */
 
@@ -174,11 +192,15 @@ nav button.active .img {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   background: rgba(0,0,0,0.5);
-  padding: 10px;
+  padding: 15px;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease, visibility .2s ease;
 }
 
 .modal {
@@ -225,7 +247,9 @@ nav button.active .img {
 }
 
 .modal-window.active {
-  display: flex;
+  visibility: visible;
+  pointer-events: auto;
+  opacity: 1;
 }
 /* </= МОДАЛЬНОЕ ОКНО СОЗДАНИЕ КОМНАТЫ=>*/
 
@@ -269,11 +293,11 @@ nav button.active .img {
   transition: transform .3s ease;
 }
 
-.create-room-form label.row {
+.create-room-form label.row, section[data-type^="section-enter-room"] label.row {
   transition: border-color .3s ease;
 }
 
-.create-room-form label.row:focus-within {
+.create-room-form label.row:focus-within, section[data-type^="section-enter-room"] label.row:focus-within{
   border-left: 3px solid var(--accent);
 }
 
@@ -351,6 +375,84 @@ nav button.active .img {
   padding-bottom: 23px;
 }
 /* </= СПИСОК КОМНАТ ПОЛЬЗОВАТЕЛЯ => */
+
+/* <= ПОИСК КОМНАТ => */
+section[data-type^="section-enter-room"] .results-container {
+  position: relative;
+  z-index: 200;
+}
+
+.results-container .results {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: var(--br);
+  gap: 1px;
+  width: 100%;
+  border-radius: 3px;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+.results-container .results.active {
+  visibility: visible;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.results-container .results div {
+  background: var(--bg2);
+  border-radius: 0;
+  padding: 15px;
+}
+
+.results-container .results div:first-child {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.results-container .results div:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* </= ПОИСК КОМНАТ => */
+
+/* <= ЗАТЕМНЕНИЕ => */
+.blackout {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+  visibility: hidden;
+  pointer-events: none;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+.blackout.active {
+  visibility: visible;
+  pointer-events: auto;
+  opacity: 1;
+}
+/* </= ЗАТЕМНЕНИЕ => */
+
+/* <= НЕДАВНИЕ КОМНАТЫ => */
+.recent-rooms {
+  height: 100%;
+}
+
+.no-rooms {
+  text-align: center;
+  color: var(--text);
+  padding-top: 60px;
+}
+/* </= НЕДАВНИЕ КОМНАТЫ => */
 
 
 /* <= АНИМАЦИИ => */

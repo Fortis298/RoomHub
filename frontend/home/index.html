@@ -7,12 +7,12 @@
   <title>RoomHub</title>
   <link rel="icon" href="/static/home/img/favicon.ico">
   <link rel="stylesheet" href="/static/common/normalization.css?v=4">
-  <link rel="stylesheet" href="/static/home/style.css?v=20">
+  <link rel="stylesheet" href="/static/home/style.css?v=33">
 </head>
 <body>
   
   <nav>
-    <img src="/static/home/img/logo.png"/>
+    <img src="/static/home/img/logo.png?v=2"/>
     <div>
       <button class="active" data-type="account">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="img">
@@ -39,7 +39,7 @@
     </div>
   </nav>
   
-    <section class="active account" data-type="section-account">
+  <section class="active account" data-type="section-account">
     <h2>Аккаунт</h2>
 
     <div class="row">
@@ -64,13 +64,26 @@
   </section>
 
   <section data-type="section-enter-room">
-    <h2>Скоро</h2>
+    
+    <div class="results-container">
+      <label class="row">
+        <input placeholder="Поиск комнат"/>
+      </label>
+      <section class="results">
+        
+      </section>
+    </div>
+    
+    
+    <section class="recent-rooms">
+      <div class="no-rooms">У вас нет недавних комнат :(</div>
+    </section>
   </section>
 
   <section data-type="section-create-room">
 
     <form class="create-room-form" novalidate>
-      <h2>Создать комнату</h2>
+      <h2>Новая комната</h2>
 
       <label class="row name">
         <div class="title">Название</div>
@@ -80,7 +93,7 @@
           minlength="3" 
           maxlength="64" 
           pattern="^[A-Za-z0-9_]+$"
-          placeholder="Моя крутая комната"/>
+          placeholder="Как назавете?"/>
       </label>
 
       <div class="type-room">
@@ -106,8 +119,8 @@
     <h2>Скоро</h2>
   </section>
 
-  <section class="modal-window">
-  </section>
+  <section class="modal-window"></section>
+  <section class="blackout"></section>
   
   <!--<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
   <script>eruda.init();</script>-->
@@ -118,5 +131,6 @@
   <script src="/static/home/js/delAccount.js?v=25" type="module"></script>
   <script src="/static/home/js/creationRoom.js?v=26" type="module"></script>
   <script src="/static/home/js/delRoom.js?v=26" type="module"></script>
+  <script src="/static/home/js/searchRoom.js?v=2" type="module"></script>
 </body>
 </html>

@@ -13,7 +13,8 @@ from routes.api import (
   exitAccount, 
   delAccount, 
   creationRoom,
-  delRoom
+  delRoom,
+  searchRoom
 )
 from routes.pages import signUpPage, logInPage, homePage
 
@@ -67,6 +68,7 @@ app.router.add_post("/api/exitAccount", exitAccount.handler)
 app.router.add_post("/api/delAccount", delAccount.handler)
 app.router.add_post("/api/creationRoom", creationRoom.handler)
 app.router.add_post("/api/delRoom", delRoom.handler)
+app.router.add_post("/api/searchRoom", searchRoom.handler)
 
 app.router.add_get("/signUp", signUpPage.handler)
 app.router.add_get("/logIn", logInPage.handler)

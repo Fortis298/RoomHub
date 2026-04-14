@@ -24,8 +24,6 @@ form.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
       if (data.ok) {
-        name.value = ''
-        
         fetchDataUser()
         if (data.typeroom == 'public') {
           const html = `
@@ -77,6 +75,7 @@ form.addEventListener('submit', (e) => {
             }
           })
         }
+        name.value = ''
       }
       else {
         if (data.errors.name) {
