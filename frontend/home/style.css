@@ -406,6 +406,15 @@ section[data-type^="section-enter-room"] .results-container {
   background: var(--bg2);
   border-radius: 0;
   padding: 15px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.results-container .results div .lock{
+  height: 20px;
+  color: var(--br);
+  margin-left: 5px;
 }
 
 .results-container .results div:first-child {
@@ -416,6 +425,10 @@ section[data-type^="section-enter-room"] .results-container {
 .results-container .results div:last-child {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+}
+.not-results {
+  text-align: center;
+  justify-content: center;
 }
 
 /* </= ПОИСК КОМНАТ => */
